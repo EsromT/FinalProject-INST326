@@ -1,5 +1,5 @@
 # Simple Content-Based Movie Recommendation Prototype
-
+# David Onafuwa, Esrom Tesfay, Ricardo Siles-Herrera
 # Sample dataset
 data = {
     'Romance': ['The Notebook', 'Titanic', 'Sleepless in Seattle'],
