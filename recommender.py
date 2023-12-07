@@ -1,47 +1,18 @@
+import pandas as pd
 # Simple Content-Based Movie Recommendation Prototype
 # David Onafuwa, Esrom Tesfay, Ricardo Siles-Herrera
-# Sample dataset
-data = {
-    'Romance': ['The Notebook', 'Titanic', 'Sleepless in Seattle'],
-    'Action': ['Die Hard', 'The Terminator', 'Rambo'],
-    'Comedy': ['The Hangover', 'Superbad', 'Anchorman'],
-    'Pop': ['Shape of You', 'Blinding Lights', 'Happy'],
-    'Rock': ['Bohemian Rhapsody', 'Stairway to Heaven', 'Hotel California'],
-    'Podcasts': ['The Joe Rogan Experience', 'Serial', 'TED Talks']
-}
 
-"""
-    Recommends media based on user interests.
+#Read in CSV file as a dataframe
+df = pd.read_csv("C:\\Users\\esrom\\OneDrive\\Documents\\Final Project\\titles.csv")
 
-    Parameters:
-    - interests (list): A list of user interests (e.g., ['Romance', 'Pop', 'Podcasts']).
+#Sorts the dataframe to only movies
+df_movies = df[df['type'].str.upper() == 'MOVIE']
 
-    Returns:
-    - list: A list of recommended media based on the user interests.
-"""
-def recommend_media(interests):
-    recommended_media = []
+#We sample our dataset to the first 100 movies
+df_sampled_movies = df_movies.head(n=100)
 
-    for interest in interests:
-        if interest in data:
-            recommended_media.extend(data[interest])
-        else:
-            print(f"Genre '{interest}' not found in the dataset.")
-    
-    return recommended_media
+#Delete unnecessary columns from our dataset
+df_further_sampled_movies = df_sampled_movies.drop(columns=['id','runtime','production_countries', 'seasons', 
+'imdb_id', 'imdb_votes', 'tmdb_popularity'])
 
-if __name__ == '__main__':
-    print("Welcome to the Media Recommender System!")
-
-    # Get user interests
-    user_input = input("Enter your interests (comma-separated): ")
-    user_interests = [interest.strip() for interest in user_input.split(',')]
-
-    # Get recommendations
-    recommendations = recommend_media(user_interests)
-
-    # Display recommendations
-    if recommendations:
-        print(f"\nRecommended media based on interests: {recommendations}")
-    else:
-        print("No recommendations found.")
+print(df_further_sampled_movies)
