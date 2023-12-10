@@ -25,16 +25,18 @@ df_further_sampled_movies.index+=1
 
 """print(df_further_sampled_movies)"""
 
-class GenrePicker():
-
-
+class Rate():
     def best_rated_movie(self, movies_data):
         mean_data = ['imdb_score', 'tmdb_score']
         mean_scores = movies_data[mean_data].mean()
         return mean_scores
     
+rate_instance = Rate()
+result = rate_instance.best_rated_movie(df_further_sampled_movies)
 
-recommendation_instance = Recommendation()
-result = recommendation_instance.best_rated_movie(df_further_sampled_movies)
+print(result)
 
-print (result)
+
+class GenrePicker():
+    def __init__(self, ):
+          self.genres = []
