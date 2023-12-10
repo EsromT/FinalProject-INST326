@@ -3,7 +3,7 @@ import pandas as pd
 # David Onafuwa, Esrom Tesfay, Ricardo Siles-Herrera
 
 #Read in CSV file as a dataframe
-df = pd.read_csv("C:\\Users\\esrom\\OneDrive\\Documents\\Final Project\\FinalProject-INST326\\titles.csv")
+df = pd.read_csv("C:\\Users\\esrom\\OneDrive\\Documents\\FinalProject-INST326\\titles.csv")
 
 #Sorts the dataframe to only movies
 df_movies = df[df['type'].str.upper() == 'MOVIE']
