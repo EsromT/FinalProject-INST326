@@ -22,4 +22,11 @@ df_further_sampled_movies = df_sampled_movies.drop(columns=['id','runtime','prod
 df_further_sampled_movies = df_further_sampled_movies.reset_index(drop=True)
 df_further_sampled_movies.index+=1
 
-print(df_further_sampled_movies)
+
+"""print(df_further_sampled_movies)"""
+
+class Recommendation():
+
+    def best_rated_movie(movies_data):
+        movies_data = df_further_sampled_movies
+        movies_data.mean('idmb_score', 'tmdb_score')
