@@ -31,10 +31,10 @@ class Rate():
         mean_scores = movies_data[mean_data].mean()
         return mean_scores
     
-rate_instance = Rate()
+"""rate_instance = Rate()
 result = rate_instance.best_rated_movie(df_further_sampled_movies)
 
-print(result)
+print(result)"""
 
 
 class GenrePicker():
