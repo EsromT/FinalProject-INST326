@@ -27,6 +27,12 @@ df_further_sampled_movies.index+=1
 
 class Recommendation():
 
-    def best_rated_movie(movies_data):
-        movies_data = df_further_sampled_movies
-        movies_data.mean('idmb_score', 'tmdb_score')
+    def best_rated_movie(self, movies_data):
+        mean_data = ['imdb_score', 'tmdb_score']
+        mean_scores = movies_data[mean_data].mean()
+        return mean_scores
+
+recommendation_instance = Recommendation()
+result = recommendation_instance.best_rated_movie(df_further_sampled_movies)
+
+print (result)
