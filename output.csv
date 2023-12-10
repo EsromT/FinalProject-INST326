@@ -1,0 +1,101 @@
+title,type,release_year,genres,imdb_score,tmdb_score
+Taxi Driver,MOVIE,1976,"['drama', 'crime']",8.2,8.179
+Deliverance,MOVIE,1972,"['drama', 'action', 'thriller', 'european']",7.7,7.3
+Monty Python and the Holy Grail,MOVIE,1975,"['fantasy', 'action', 'comedy']",8.2,7.811
+The Dirty Dozen,MOVIE,1967,"['war', 'action']",7.7,7.6
+Life of Brian,MOVIE,1979,['comedy'],8.0,7.8
+Dirty Harry,MOVIE,1971,"['thriller', 'action', 'crime']",7.7,7.5
+Bonnie and Clyde,MOVIE,1967,"['crime', 'drama', 'action']",7.7,7.5
+The Blue Lagoon,MOVIE,1980,"['romance', 'action', 'drama']",5.8,6.156
+The Guns of Navarone,MOVIE,1961,"['action', 'drama', 'war']",7.5,7.3
+The Professionals,MOVIE,1966,"['western', 'action', 'european']",7.3,7.1
+Richard Pryor: Live in Concert,MOVIE,1979,"['comedy', 'documentation']",8.1,7.5
+White Christmas,MOVIE,1954,"['romance', 'comedy']",7.5,7.2
+Cairo Station,MOVIE,1958,"['drama', 'crime', 'comedy']",7.5,7.3
+Hitler: A Career,MOVIE,1977,"['history', 'documentation', 'european']",7.5,7.3
+FTA,MOVIE,1972,"['war', 'documentation', 'music', 'comedy']",6.2,6.1
+Alexandria… Why?,MOVIE,1979,['drama'],7.2,6.0
+The Land,MOVIE,1969,['drama'],8.1,8.5
+Dostana,MOVIE,1980,"['drama', 'comedy', 'crime', 'romance', 'action']",2.1,4.9
+Saladin the Victorious,MOVIE,1963,"['action', 'drama', 'war', 'history', 'romance']",7.6,7.1
+Alibaba Aur 40 Chor,MOVIE,1979,"['drama', 'romance', 'action', 'fantasy', 'family']",6.2,6.8
+The Blazing Sun,MOVIE,1954,"['crime', 'romance', 'drama']",7.4,7.0
+Dark Waters,MOVIE,1956,"['action', 'drama', 'romance', 'thriller']",6.7,5.9
+We Are All for the Fatherland,MOVIE,1979,['documentation'],6.1,5.2
+Singapore,MOVIE,1960,"['drama', 'thriller', 'crime']",6.4,6.3
+"Beirut, Oh Beirut",MOVIE,1975,['drama'],6.4,7.2
+The Return of the Prodigal Son,MOVIE,1976,"['music', 'drama', 'crime']",7.2,5.3
+Khoon Khoon,MOVIE,1973,"['crime', 'thriller']",5.1,3.8
+Manoranjan,MOVIE,1974,"['romance', 'drama', 'comedy']",6.5,5.3
+Ujala,MOVIE,1959,"['romance', 'crime', 'drama']",6.6,6.0
+Whispers,MOVIE,1980,['documentation'],7.8,5.0
+Chadi Jawani Budhe Nu,MOVIE,1976,['romance'],4.6,6.0
+Bandie,MOVIE,1978,"['drama', 'action', 'romance']",4.4,6.0
+GoodFellas,MOVIE,1990,"['drama', 'crime']",8.7,8.463
+Full Metal Jacket,MOVIE,1987,"['war', 'drama']",8.3,8.1
+Once Upon a Time in America,MOVIE,1984,"['crime', 'drama', 'european']",8.3,8.453
+When Harry Met Sally...,MOVIE,1989,"['comedy', 'romance', 'drama']",7.7,7.4
+A Nightmare on Elm Street,MOVIE,1984,['horror'],7.4,7.3
+Steel Magnolias,MOVIE,1989,"['comedy', 'drama', 'romance']",7.3,7.2
+Police Academy,MOVIE,1984,"['crime', 'comedy']",6.7,6.6
+Christine,MOVIE,1983,"['horror', 'thriller', 'european']",6.7,6.8
+Awakenings,MOVIE,1990,"['drama', 'european']",7.8,7.8
+National Lampoon's Christmas Vacation,MOVIE,1989,"['comedy', 'european']",7.5,7.2
+Lean On Me,MOVIE,1989,['drama'],7.4,7.3
+Eddie Murphy Raw,MOVIE,1987,"['comedy', 'documentation']",7.6,7.3
+She's Gotta Have It,MOVIE,1986,"['romance', 'comedy']",6.7,6.707
+Endless Love,MOVIE,1981,"['romance', 'drama']",4.9,5.7
+Vaashi,MOVIE,1983,"['drama', 'thriller']",6.7,
+Mobile Suit Gundam: Char's Counterattack,MOVIE,1988,"['scifi', 'animation', 'action', 'drama', 'war']",7.3,6.7
+Mobile Suit Gundam II: Soldiers of Sorrow,MOVIE,1981,"['animation', 'scifi', 'action', 'drama', 'war']",7.2,7.2
+Sam Kinison: Breaking the Rules,MOVIE,1987,"['comedy', 'documentation']",7.2,7.2
+Waiting for the Hearse,MOVIE,1985,['comedy'],8.0,8.1
+Tim Allen: Men Are Pigs,MOVIE,1990,"['comedy', 'documentation']",6.1,6.3
+Mobile Suit Gundam III: Encounters in Space,MOVIE,1982,"['action', 'drama', 'war', 'animation', 'scifi']",7.6,7.5
+Monty Python Live at the Hollywood Bowl,MOVIE,1982,"['comedy', 'documentation']",7.9,7.4
+Disco Dancer,MOVIE,1982,"['drama', 'romance']",6.4,5.3
+Agneepath,MOVIE,1990,"['drama', 'action', 'crime']",7.6,6.5
+Parrot Sketch Not Included: Twenty Years of Monty Python,MOVIE,1989,['comedy'],8.1,6.9
+Too Young The Hero,MOVIE,1988,"['drama', 'war']",6.7,6.2
+A Stoning in Fulham County,MOVIE,1988,"['thriller', 'crime', 'drama']",5.9,5.8
+The Ryan White Story,MOVIE,1989,['drama'],7.2,5.9
+Dil,MOVIE,1990,"['drama', 'comedy', 'romance']",6.6,6.5
+Adam: His Song Continues,MOVIE,1986,"['crime', 'drama']",7.0,7.0
+The George McKenna Story,MOVIE,1988,['drama'],6.0,6.1
+In Defense of a Married Man,MOVIE,1990,"['drama', 'crime']",5.6,4.9
+Bill Hicks: Sane Man,MOVIE,1989,['comedy'],,7.5
+Mujrim,MOVIE,1989,"['drama', 'action', 'crime']",5.4,6.0
+Aakhri Adaalat,MOVIE,1988,"['action', 'crime', 'thriller']",5.1,5.0
+"Alexandria, Again and Forever",MOVIE,1989,['drama'],6.5,5.3
+Duniya,MOVIE,1984,"['action', 'drama']",6.3,
+Strange Voices,MOVIE,1987,['drama'],6.3,6.8
+Jaal,MOVIE,1986,"['action', 'drama', 'thriller']",5.2,5.0
+Quiet Victory: The Charlie Wedemeyer Story,MOVIE,1988,['drama'],7.2,8.0
+Muqaddar Ka Faisla,MOVIE,1987,"['action', 'comedy', 'drama', 'family']",4.8,
+Pyar Ke Do Pal,MOVIE,1986,"['drama', 'action']",6.1,
+Sohni Mahiwal,MOVIE,1984,"['romance', 'drama', 'action']",6.1,5.8
+Ek Jaan Hain Hum,MOVIE,1983,"['family', 'romance']",6.3,7.0
+An Egyptian Story,MOVIE,1982,"['drama', 'fantasy']",7.3,6.7
+The Little Wars,MOVIE,1982,"['war', 'drama', 'european']",6.3,5.5
+Unspeakable Acts,MOVIE,1990,['drama'],6.1,5.3
+Mission: Impossible,MOVIE,1996,"['thriller', 'action']",7.1,6.9
+Se7en,MOVIE,1995,"['crime', 'thriller', 'drama']",8.6,8.352
+Boogie Nights,MOVIE,1997,['drama'],7.9,7.6
+Forrest Gump,MOVIE,1994,"['drama', 'romance']",8.8,8.478
+Snatch,MOVIE,2000,"['crime', 'comedy']",8.3,7.8
+The Talented Mr. Ripley,MOVIE,1999,"['thriller', 'drama', 'crime']",7.4,7.2
+Titanic,MOVIE,1997,"['drama', 'romance']",7.9,7.878
+Starship Troopers,MOVIE,1997,"['scifi', 'action', 'thriller']",7.3,6.993
+Mission: Impossible II,MOVIE,2000,"['thriller', 'action']",6.1,6.1
+Dumb and Dumber,MOVIE,1994,['comedy'],7.3,6.6
+Gattaca,MOVIE,1997,"['scifi', 'thriller', 'romance', 'drama']",7.8,7.553
+Léon: The Professional,MOVIE,1994,"['crime', 'drama', 'action', 'thriller', 'european']",8.5,8.323
+Natural Born Killers,MOVIE,1994,"['thriller', 'drama', 'crime', 'action']",7.3,7.1
+The Quick and the Dead,MOVIE,1995,"['action', 'thriller', 'western', 'romance']",6.5,6.5
+You've Got Mail,MOVIE,1998,"['comedy', 'romance', 'drama']",6.7,6.643
+Big Daddy,MOVIE,1999,"['drama', 'comedy', 'european']",6.4,6.45
+Vampires,MOVIE,1998,"['fantasy', 'action', 'horror', 'thriller']",6.1,6.3
+Donnie Brasco,MOVIE,1997,"['drama', 'thriller', 'crime']",7.7,7.5
+A River Runs Through It,MOVIE,1992,['drama'],7.2,7.1
+"Girl, Interrupted",MOVIE,1999,"['drama', 'european']",7.3,7.6
+Last Action Hero,MOVIE,1993,"['action', 'fantasy', 'comedy', 'family']",6.4,6.379
