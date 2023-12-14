@@ -64,4 +64,17 @@ class GenrePicker():
                 return chosen_genre
             else:
                 print("Invalid genre. Please choose from the available genres.")
+
+class MovieRecommender():
+
+    def __init__(self, movies_data):
+        self.movies_data = movies_data
+
+    def recommend_movie(self, genre):
+        genre_movies = self.movies_data[self.movies_data['genres'].apply(lambda x: genre.lower() in x.lower())]
+        if not genre_movies.empty:
+            top_movie = genre_movies.loc[genre_movies['imdb_score'].idxmax()]
+            return top_movie
+        else:
+            return None
     
