@@ -47,8 +47,8 @@ class GenrePicker():
 
     """ Initialize the GenrePicker object. """
 
-    def __init__(self, ):
-          self.genres = []
+    def __init__(self,genres):
+          self.genres = genres
     
 
     def get_genre_choice(self):
