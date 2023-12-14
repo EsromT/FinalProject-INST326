@@ -30,7 +30,8 @@ class Rate():
         mean_data = ['imdb_score', 'tmdb_score']
         mean_scores = movies_data[mean_data].mean()
         return mean_scores
-    
+
+#Tests mean of scores    
 """rate_instance = Rate()
 result = rate_instance.best_rated_movie(df_further_sampled_movies)
 
@@ -38,5 +39,25 @@ print(result)"""
 
 
 class GenrePicker():
+
+    """ Initialize the GenrePicker object. """
+
     def __init__(self, ):
           self.genres = []
+    
+
+    def get_genre_choice(self):
+         
+         print("Available Genres:")
+
+         for genre in self.genres:
+            print(f"- {genre}")
+            
+            while True:
+                chosen_genre = input("Enter the genre you want to watch: ").strip().capitalize()
+            if chosen_genre in self.genres:
+                return chosen_genre
+            else:
+                print("Invalid genre. Please choose from the available genres.")
+    
+    
