@@ -24,8 +24,10 @@ def process_movie_data(csv_path):
 
     return df_further_sampled_movies
 
+#Checks if processed_data works
+"""
 processed_data = process_movie_data("C:\\Users\\esrom\\OneDrive\\Documents\\FinalProject-INST326\\titles.csv")
-print(processed_data)
+print(processed_data)"""
 
 
 class Rate():
