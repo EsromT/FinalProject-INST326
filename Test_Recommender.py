@@ -4,12 +4,14 @@ import pandas as pd
 from recommender import process_movie_data, Rate, GenrePicker, MovieRecommender
 
 class TestMovieFunctions(unittest.TestCase):
+    """Test cases for movie-related functions and classes."""
 
     def setUp(self):
-        #Set up any necessary data or objects for your tests here
+        """Set up any necessary data or objects for your tests here."""
         self.movies_data = process_movie_data("titles.csv")
 
     def test_process_movie_data(self):
+        """Test the process_movie_data function."""
         self.assertIsInstance(self.movies_data, pd.DataFrame)
         self.assertGreater(len(self.movies_data), 0)
         self.assertTrue('title' in self.movies_data.columns)
@@ -20,6 +22,7 @@ class TestMovieFunctions(unittest.TestCase):
         self.assertTrue('tmdb_score' in self.movies_data.columns)
         
     def test_best_rated_movie(self):
+        """Test the best_rated_movie method of the Rate class."""
         # Test if best_rated_movie returns a valid result
         rate_instance = Rate()
         result = rate_instance.best_rated_movie(self.movies_data)
@@ -34,7 +37,10 @@ import tkinter as tk
 from tkinter import ttk
 
 class TestMovieGenreSelector(unittest.TestCase):
+    """Test cases for the Movie Genre Selector functionality."""
+
     def test_show_movie(self):
+        """Test the show_movie function."""
         # Create the main window
         root = tk.Tk()
         root.title("Movie Genre Selector")
@@ -81,6 +87,3 @@ class TestMovieGenreSelector(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
