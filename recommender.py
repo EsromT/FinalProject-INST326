@@ -1,7 +1,15 @@
 import pandas as pd
-# Simple Content-Based Movie Recommendation Prototype
-# David Onafuwa, Esrom Tesfay, Ricardo Siles-Herrera
+
 def process_movie_data(csv_path):
+    """
+    Process movie data from a CSV file.
+
+    Parameters:
+    - csv_path (str): The path to the CSV file containing movie data.
+
+    Returns:
+    - pd.DataFrame: Processed movie data containing only movies with specific columns.
+    """
     # Read in CSV file as a dataframe
     df = pd.read_csv(csv_path)
 
@@ -10,12 +18,12 @@ def process_movie_data(csv_path):
 
     # Delete unnecessary columns from our dataset
     df_movies = df_movies.drop(columns=['id', 'runtime', 'production_countries', 'seasons',
-                                                        'imdb_id', 'imdb_votes', 'tmdb_popularity',
-                                                        'age_certification'])
+                                        'imdb_id', 'imdb_votes', 'tmdb_popularity',
+                                        'age_certification'])
 
-    #removes unnessesary characters from the column
+    # Removes unnecessary characters from the 'genres' column
     df_movies['genres'] = df_movies['genres'].apply(lambda x: [genre.strip("[]',\"") for genre in eval(x)])
-    
+
     # Used only to import data to a CSV file to see the entirety of the updated dataframe
     df_movies.to_csv("output.csv", index=False)
 
@@ -26,23 +34,32 @@ def process_movie_data(csv_path):
     return df_movies
 
 
-
-
 class GenrePicker():
-    """ Initialize the GenrePicker object. """
+    """Initialize the GenrePicker object."""
 
     def __init__(self, genres):
+        """
+        Initialize GenrePicker with a list of available genres.
+
+        Parameters:
+        - genres (list): List of available genres.
+        """
         self.genres = genres
-        
-    
+
     def get_genre_choice(self):
+        """
+        Get the user's choice of genre.
+
+        Returns:
+        - str: The chosen genre.
+        """
         print("Available Genres:")
 
-        #prints each genre in the list of genres
+        # Prints each genre in the list of genres
         for genre in self.genres:
             print(genre)
 
-        #ask user for genre 
+        # Ask the user for a genre
         while True:
             chosen_genre = input("Enter the genre you want to watch: ").strip()
             if chosen_genre in self.genres:
@@ -50,20 +67,38 @@ class GenrePicker():
             else:
                 print("Invalid genre. Please choose from the available genres.")
 
+
 class MovieRecommender():
-    #recommends a movie from a choosen genre that is has higest imdb score
+    """Recommends a movie from a chosen genre that has the highest IMDb score."""
+
     def __init__(self, movies_data):
+        """
+        Initialize MovieRecommender with movie data.
+
+        Parameters:
+        - movies_data (pd.DataFrame): DataFrame containing movie data.
+        """
         self.movies_data = movies_data
 
     def recommend_movie(self, genre):
-        #sorts genres column by genre choosen 
+        """
+        Recommend a movie from the chosen genre with the highest IMDb score.
+
+        Parameters:
+        - genre (str): Chosen genre.
+
+        Returns:
+        - pd.Series or None: Information about the recommended movie or None if no movie is found.
+        """
+        # Sorts genres column by the chosen genre
         genre_movies = self.movies_data[self.movies_data['genres'].apply(lambda x: genre.lower() in [g.lower() for g in x])]
         if not genre_movies.empty:
-            #displays the highest rated movie in that particular genre
+            # Displays the highest-rated movie in that particular genre
             top_movie = genre_movies.loc[genre_movies['imdb_score'].idxmax()]
             return top_movie
         else:
             return None
+
 
 if __name__ == "__main__":
     # Process movie data and get genres from the entire dataset
@@ -78,7 +113,7 @@ if __name__ == "__main__":
     # Clean up unwanted characters in genres
     cleaned_genres = [str(genre).strip("[],'\"") for genre in unique_genres]
 
-    #Displays Genres
+    # Displays Genres
     print("Available Genres:")
     for genre in cleaned_genres:
         print(genre)
@@ -92,10 +127,10 @@ if __name__ == "__main__":
     # Initialize MovieRecommender with the entire movie dataset
     recommender = MovieRecommender(processed_data)
 
-    # Recommend a movie 
+    # Recommend a movie
     recommended_movie = recommender.recommend_movie(user_genre_choice)
 
-    #Prints information about movie
+    # Prints information about the movie
     if recommended_movie is not None:
         print(f"\nWe recommend the following movie for the genre '{user_genre_choice}':")
         print(f"Title: {recommended_movie['title']}")
