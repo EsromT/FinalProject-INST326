@@ -2,33 +2,25 @@ import pandas as pd
 # Simple Content-Based Movie Recommendation Prototype
 # David Onafuwa, Esrom Tesfay, Ricardo Siles-Herrera
 def process_movie_data(csv_path):
-    #Read in CSV file as a dataframe
+    # Read in CSV file as a dataframe
     df = pd.read_csv(csv_path)
 
-    #Sorts the dataframe to only movies
+    # Sorts the dataframe to only movies
     df_movies = df[df['type'].str.upper() == 'MOVIE']
 
-    #We sample our dataset to the first 100 movies
-    df_sampled_movies = df_movies.head(n=100)
+    # Delete unnecessary columns from our dataset
+    df_further_sampled_movies = df_movies.drop(columns=['id', 'runtime', 'production_countries', 'seasons',
+                                                        'imdb_id', 'imdb_votes', 'tmdb_popularity', 'description',
+                                                        'age_certification'])
 
-    #Delete unnecessary columns from our dataset
-    df_further_sampled_movies = df_sampled_movies.drop(columns=['id','runtime','production_countries', 'seasons', 
-    'imdb_id', 'imdb_votes', 'tmdb_popularity', 'description', 'age_certification'])
-
-    #Used only to import data to a csv file inorder to see entirety of updated dataframe
+    # Used only to import data to a CSV file to see the entirety of the updated dataframe
     df_further_sampled_movies.to_csv("output.csv", index=False)
 
-    #Resets index of dataset from 1 to 100. Inorder to properly label first 100 movies.
+    # Resets index of dataset from 1 to n to properly label the movies.
     df_further_sampled_movies = df_further_sampled_movies.reset_index(drop=True)
-    df_further_sampled_movies.index+=1
+    df_further_sampled_movies.index += 1
 
     return df_further_sampled_movies
-
-#Checks if processed_data works
-"""
-processed_data = process_movie_data("C:\\Users\\esrom\\OneDrive\\Documents\\FinalProject-INST326\\titles.csv")
-print(processed_data)"""
-
 
 class Rate():
     def best_rated_movie(self, movies_data):
@@ -36,37 +28,26 @@ class Rate():
         mean_scores = movies_data[mean_data].mean()
         return mean_scores
 
-#Tests mean of scores    
-"""rate_instance = Rate()
-result = rate_instance.best_rated_movie(df_further_sampled_movies)
-
-print(result)"""
-
-
 class GenrePicker():
-
     """ Initialize the GenrePicker object. """
 
-    def __init__(self,genres):
-          self.genres = genres
-    
+    def __init__(self, genres):
+        self.genres = genres
 
     def get_genre_choice(self):
-         
-         print("Available Genres:")
+        print("Available Genres:")
 
-         for genre in self.genres:
+        for genre in self.genres:
             print(f"- {genre}")
-            
-            while True:
-                chosen_genre = input("Enter the genre you want to watch: ").strip().capitalize()
+
+        while True:
+            chosen_genre = input("Enter the genre you want to watch: ").strip().capitalize()
             if chosen_genre in self.genres:
                 return chosen_genre
             else:
                 print("Invalid genre. Please choose from the available genres.")
 
 class MovieRecommender():
-
     def __init__(self, movies_data):
         self.movies_data = movies_data
 
@@ -77,19 +58,19 @@ class MovieRecommender():
             return top_movie
         else:
             return None
+
 if __name__ == "__main__":
-    # Process movie data and get genres
-    # Process movie data and get genres
-processed_data = process_movie_data("C:\\Users\\esrom\\OneDrive\\Documents\\FinalProject-INST326\\titles.csv")
-available_genres = processed_data['genres'].explode().unique()
+    # Process movie data and get genres from the entire dataset
+    processed_data = process_movie_data("C:\\Users\\esrom\\OneDrive\\Documents\\FinalProject-INST326\\titles.csv")
+    available_genres = processed_data['genres'].explode().unique()
 
-# Initialize GenrePicker with available genres
-genre_picker = GenrePicker(available_genres)
+    # Initialize GenrePicker with available genres
+    genre_picker = GenrePicker(available_genres)
 
-# Get user's genre choice
-user_genre_choice = genre_picker.get_genre_choice()
+    # Get user's genre choice
+    user_genre_choice = genre_picker.get_genre_choice()
 
-    # Initialize MovieRecommender with the sampled movie data
+    # Initialize MovieRecommender with the entire movie dataset
     recommender = MovieRecommender(processed_data)
 
     # Recommend a movie based on the user's chosen genre
