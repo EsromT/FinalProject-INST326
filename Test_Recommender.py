@@ -28,6 +28,42 @@ class TestMovieFunctions(unittest.TestCase):
         self.assertTrue('tmdb_score' in result.index)
         
 
+### Test Case for the other reco.py code in case.
+import unittest
+from tkinter import Tk
+from tkinter import ttk
+from tkinter import Label
+
+class TestMovieGenreSelector(unittest.TestCase):
+    def test_show_movie(self):
+        # Create the main window
+        root = Tk()
+        root.title("Movie Genre Selector")
+
+        # Genre selection dropdown
+        genre_var = tk.StringVar()
+        genre_label = Label(root, text="Select Genre:")
+        genre_label.pack(pady=10)
+        genre_dropdown = ttk.Combobox(root, textvariable=genre_var, values=["crime", "drama", "comedy"])
+        genre_dropdown.pack(pady=10)
+
+        # Button to show selected movie
+        show_button = tk.Button(root, text="Show Movie", command=show_movie)
+        show_button.pack(pady=10)
+
+        # Label to display the result
+        result_label = tk.Label(root, text="")
+        result_label.pack(pady=10)
+
+        # Set the selected genre and trigger the show_movie function
+        genre_var.set("crime")
+        show_movie()
+
+        # Assert that the result_label text is as expected
+        self.assertEqual(result_label.cget("text"), "No movies found for the selected genre.")
+
+if __name__ == '__main__':
+    unittest.main()
 
 
 
