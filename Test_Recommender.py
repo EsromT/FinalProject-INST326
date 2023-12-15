@@ -26,6 +26,9 @@ class TestMovieFunctions(unittest.TestCase):
         self.assertIsInstance(result, pd.Series)
         self.assertTrue('imdb_score' in result.index)
         self.assertTrue('tmdb_score' in result.index)
+        
+        
+        
 
 
 
