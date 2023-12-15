@@ -53,13 +53,15 @@ class GenrePicker():
 
     def get_genre_choice(self):
          
-         print("Available Genres:")
+        print("Available Genres:")
 
-         for genre in self.genres:
-            print(f"- {genre}")
+        while True:
+            for genre in self.genres:
+                print(f"- {genre}")
             
-            while True:
-                chosen_genre = input("Enter the genre you want to watch: ").strip().capitalize()
+            
+            chosen_genre = input("Enter the genre you want to watch: ").strip().capitalize()
+            
             if chosen_genre in self.genres:
                 return chosen_genre
             else:
@@ -77,4 +79,28 @@ class MovieRecommender():
             return top_movie
         else:
             return None
-    
+if __name__ == "__main__":
+    # Process movie data and get genres
+    #commented out for testing purposes --------------------------------------------------
+    #processed_data = process_movie_data("C:\\Users\\esrom\\OneDrive\\Documents\\FinalProject-INST326\\titles.csv")
+    processed_data = process_movie_data("titles.csv")
+
+    available_genres = processed_data['genres'].explode().unique()
+
+    # Initialize GenrePicker with available genres
+    genre_picker = GenrePicker(available_genres)
+
+    # Get user's genre choice
+    user_genre_choice = genre_picker.get_genre_choice()
+
+    # Initialize MovieRecommender with the sampled movie data
+    recommender = MovieRecommender(processed_data)
+
+    # Recommend a movie based on the user's chosen genre
+    recommended_movie = recommender.recommend_movie(user_genre_choice)
+
+    if recommended_movie is not None:
+        print(f"\nWe recommend the following movie for the genre '{user_genre_choice}':")
+        print(recommended_movie[['title', 'genres', 'imdb_score', 'tmdb_score']])
+    else:
+        print(f"\nSorry, no movie found for the genre '{user_genre_choice}'.")
