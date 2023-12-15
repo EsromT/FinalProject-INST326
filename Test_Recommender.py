@@ -30,24 +30,41 @@ class TestMovieFunctions(unittest.TestCase):
 
 ### Test Case for the other reco.py code in case.
 import unittest
-from tkinter import Tk
+import tkinter as tk
 from tkinter import ttk
-from tkinter import Label
 
 class TestMovieGenreSelector(unittest.TestCase):
     def test_show_movie(self):
         # Create the main window
-        root = Tk()
+        root = tk.Tk()
         root.title("Movie Genre Selector")
 
         # Genre selection dropdown
         genre_var = tk.StringVar()
-        genre_label = Label(root, text="Select Genre:")
+        genre_label = tk.Label(root, text="Select Genre:")
         genre_label.pack(pady=10)
         genre_dropdown = ttk.Combobox(root, textvariable=genre_var, values=["crime", "drama", "comedy"])
         genre_dropdown.pack(pady=10)
 
         # Button to show selected movie
+        def show_movie():
+            selected_genre = genre_var.get()
+            selected_movies = []
+            if selected_genre == "crime":
+                selected_movies = []
+            elif selected_genre == "drama":
+                selected_movies = [{'title': 'Movie1', 'imdb_score': '8.0'}, {'title': 'Movie2', 'imdb_score': '7.5'}]
+            elif selected_genre == "comedy":
+                selected_movies = [{'title': 'Funny Movie', 'imdb_score': '9.0'}]
+
+            if selected_movies:
+                movie_info = ""
+                for movie in selected_movies:
+                    movie_info += f"{movie['title']} - Rating: {movie['imdb_score']}\n"
+                result_label.config(text=movie_info)
+            else:
+                result_label.config(text="No movies found for the selected genre.")
+
         show_button = tk.Button(root, text="Show Movie", command=show_movie)
         show_button.pack(pady=10)
 
