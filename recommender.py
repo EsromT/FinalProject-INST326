@@ -79,14 +79,15 @@ class MovieRecommender():
             return None
 if __name__ == "__main__":
     # Process movie data and get genres
-    processed_data = process_movie_data("C:\\Users\\esrom\\OneDrive\\Documents\\FinalProject-INST326\\titles.csv")
-    available_genres = processed_data['genres'].explode().unique()
+    # Process movie data and get genres
+processed_data = process_movie_data("C:\\Users\\esrom\\OneDrive\\Documents\\FinalProject-INST326\\titles.csv")
+available_genres = processed_data['genres'].explode().unique()
 
-    # Initialize GenrePicker with available genres
-    genre_picker = GenrePicker(available_genres)
+# Initialize GenrePicker with available genres
+genre_picker = GenrePicker(available_genres)
 
-    # Get user's genre choice
-    user_genre_choice = genre_picker.get_genre_choice()
+# Get user's genre choice
+user_genre_choice = genre_picker.get_genre_choice()
 
     # Initialize MovieRecommender with the sampled movie data
     recommender = MovieRecommender(processed_data)
