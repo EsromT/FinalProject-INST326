@@ -1,8 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
 
-# Function to display selected movie and its rating
 def show_movie():
+    """
+    Display selected movie(s) and their rating(s) based on the chosen genre.
+
+    Reads the selected genre from the dropdown, filters movies based on the genre,
+    and updates the result_label with movie information.
+
+    Returns:
+    - None
+    """
     selected_genre = genre_var.get()
     selected_movies = [movie for movie in movies_data if selected_genre in movie['genres']]
 
